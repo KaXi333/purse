@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<link rel="stylesheet" href="css/apple.css">
+	<link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/Accounts.css">
+    <link rel="stylesheet" href="css/trade.css">
+    <link rel="stylesheet" href="dist/dropload.css">
+</head>
+<body>
+	<!--title-->
+	<div class="header">
+        <a href="home.html" class="header_back"><img class="btnImg" src="images/left@2x.png"></a>
+		<span class="head_back_text">交易记录</span>
+	</div>
+  <div>
+      <div class="trad_bg"></div>
+      <div class="account_box">
+          <div class="account_item">
+              <div class="formto">
+                  <h3>FROM</h3>
+                  <input disabled="disabled"  class="" type="text" />
+              </div>
+              <div class="accountImg_box"><img class="accountImg" src="images/account@2x.png" alt=""></div>
+              <div class="formto formto_right">
+                  <h3>TO</h3>
+                  <input disabled="disabled"  class="" type="text" />
+              </div>
+              <div class="clearfloat"></div> 
+          </div>
+          <div class="account_money">
+                  <input disabled="disabled"  type="text" placeholder="0.00" />
+                  <span>FMC</span>
+          </div>
+          <p class="data_box">
+                  2018.05.10 17:31:00
+          </p>
+      </div>
+  </div>
+  <div class="content">
+    <div class="lists"></div>
+  </div>
+<script src="js/zepto.min.js"></script>
+<script src="dist/dropload.min.js"></script>
+<script>
+  $(function(){
+  // 页数
+  var page = 0;
+  // 每页展示5个
+  var size = 5;
+
+  // dropload
+  $('.content').dropload({
+      scrollArea : window,
+      loadDownFn : function(me){
+          page++;
+          // 拼接HTML
+          var result = '';
+          $.ajax({
+              type: 'GET',
+              url: 'http://ons.me/tools/dropload/json.php?page='+page+'&size='+size,
+              dataType: 'json',
+              success: function(data){
+                  var arrLen = data.length;
+                  if(arrLen > 0){
+                      for(var i=0; i<arrLen; i++){
+                          result +=   '<a class="item opacity" href="'+data[i].link+'">'
+                                          +'<img src="'+data[i].pic+'" alt="">'
+                                          +'<h3>'+data[i].title+'</h3>'
+                                          +'<span class="date">'+data[i].date+'</span>'
+                                      +'</a>';
+                      }
+                  // 如果没有数据
+                  }else{
+                      // 锁定
+                      me.lock();
+                      // 无数据
+                      me.noData();
+                  }
+                  // 为了测试，延迟1秒加载
+                  setTimeout(function(){
+                      // 插入数据到页面，放到最后面
+                      $('.lists').append(result);
+                      // 每次数据插入，必须重置
+                      me.resetload();
+                  },1000);
+              },
+              error: function(xhr, type){
+                  alert('Ajax error!');
+                  // 即使加载出错，也得重置
+                  me.resetload();
+              }
+          });
+      }
+  });
+});
+</script>
+</body>
+</html>

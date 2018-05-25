@@ -1,0 +1,22 @@
+.account_box{
+	padding: .3rem .2rem 0 .2rem;
+}
+.formto input{
+	background-color: rgb(245,245,245);
+}
+.account_money{
+	background-color: rgb(245,245,245);
+}
+.account_money input{
+	background-color: rgb(245,245,245);
+}
+.trad_bg{
+	height: .2rem;
+	background-color: rgb(245,245,245);
+}
+.data_box{
+	margin: .3rem 0;
+	color: rgb(153,153,153);
+	font-size: .3rem;
+	text-align: right;
+}

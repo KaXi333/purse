@@ -1,0 +1,61 @@
+.header_text{
+	font-size: .36rem;
+	color:rgb(72,188,248);
+	line-height: 1rem;
+	padding-left: .2rem;
+	background-color: #fff;
+}
+.header_Subtitle{
+	font-size: .36rem;
+	color:rgb(26,26,26);
+	line-height: 1.2rem;
+	padding-left: .35rem;
+	background-color: #fff;
+}
+.copy_box{
+	background-color: #fff;
+	color: rgb(153,153,153);
+	font-size: .3rem;
+	padding: 0 .2rem;
+	height: 1rem;
+	line-height: 1rem;
+	margin:.1rem 0 .2rem 0;
+	position: relative;
+}
+.copy_box span{
+	float: left
+}
+.IdVlaue{
+	width: 5rem;
+	word-wrap:break-word;
+}
+.copy_btn{
+	display: block;
+	position: absolute;
+	right:.2rem;
+	top:50%;
+	transform: translateY(-50%);
+    width: 1.2rem;
+    height: .6rem;
+    border-radius: .08rem;
+    color: #fff;
+    font-size: .3rem;
+    line-height: .6rem;
+    text-align: center;
+    background-color: rgb(72,188,248);
+}
+.item_text_box{
+	position: relative;
+	font-size: .36rem;
+	color:rgb(26,26,26);
+	line-height: 1rem;
+	padding-left: .2rem;
+	background-color: #fff;
+	border-bottom: 1px solid rgb(245,245,245);
+}
+.item_text_jump {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: .2rem;
+}

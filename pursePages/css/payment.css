@@ -1,0 +1,94 @@
+body { margin: 0; }
+input { padding: 0; margin: 0; border: 0; }
+.payMethod_box{
+    background-color: #fff;
+    margin-top: .2rem;
+}
+.payMethodList {
+    position: relative; /* 设置为相对定位，以便让子元素能绝对定位 */
+    height: 1rem;
+    padding: 0 .2rem;
+    line-height: 1rem;
+    border-bottom: 1px solid rgb(245,245,245)
+}
+.payMethod_box label {
+    display: block;
+    font-size: .36rem;
+    cursor: pointer;
+    color:  rgb(26,26,26);
+    margin-left:.9rem;
+    
+}
+.payMethod_box input {
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0.2rem;
+    margin: auto; /* 这里及以上的定位，可以让该元素竖直居中。(top: 0; bottom: 0;) */
+    opacity: 0;
+    display: block;
+    width: .35rem;
+    height: .35rem;
+    cursor: pointer;
+}
+.payMethod_box span {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: .2rem;
+    margin: auto;
+    display: block;
+    width: .3rem;
+    height: .3rem;
+    border: 1px solid #999;
+    border-radius: 50%;
+    cursor: pointer;
+}        
+.payMethod_box span.active {
+    background-color: #48bcf8;            
+}
+
+.payMethImg{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: .2rem;
+    margin: auto;
+    display: block;
+    width: .7rem;
+    height:.7rem;
+}
+
+
+.payInput_box{
+    position: relative;
+    height: 1rem;
+    padding: 0 .2rem;
+    line-height: 1rem;  
+    background-color: #fff;
+    margin-top: .2rem;
+}
+.jbImg{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: .2rem;
+    margin: auto;
+    display: block;
+    width: .34rem;
+    height:.34rem;
+}
+.jb_input{
+    margin-left: .4rem;
+    width: 6rem;
+    height: 1rem;
+    border: 0;
+    font-size: 0.3rem;
+    border-radius: 0.04rem;
+    outline:none;
+    background:#fff;
+}
+.register_action{
+    margin-top: 1rem;
+}

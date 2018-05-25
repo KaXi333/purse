@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>支付方式</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<link rel="stylesheet" href="css/apple.css">
+	<link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/payment.css">
+</head>
+<body style="background-color: rgb(245,245,245)">
+	<!--title-->
+	<div class="header">
+    <a href="trade.html" class="header_back"><img class="btnImg" src="images/left@2x.png"></a>
+		<span class="head_back_text">支付方式</span>
+	</div>
+  <div>
+    <div class="payMethod_box">
+      <div class="payMethodList">
+          <img class="payMethImg" src="images/btbs.png">
+          <label for="payMethBtn">比特币</label>
+          <input type="radio" class="payMethBtn" name="payMethBtn" checked="checked">
+          <span ></span> <!-- 同下面的 span 一样作为自定义的元素 -->
+      </div>
+      <div class="payMethodList">
+          <img class="payMethImg" src="images/ytbs.png">
+          <label for="payMethBtn">以太币</label>
+          <input type="radio" class="payMethBtn" name="payMethBtn" >
+          <span ></span>    
+      </div>
+      <div class="payMethodList">
+          <img class="payMethImg" src="images/wx.png">
+          <label for="payMethBtn">微信二维码</label>
+          <input type="radio" class="payMethBtn" name="payMethBtn" >
+          <span ></span>    
+      </div>
+      <div class="payMethodList">
+          <img class="payMethImg" src="images/zfb.png">
+          <label for="payMethBtn">支付宝二维码</label>
+          <input type="radio" class="payMethBtn" name="payMethBtn" >
+          <span ></span>    
+      </div>
+      <div class="payMethodList">
+          <img class="payMethImg" src="images/zfb.png">
+          <label for="payMethBtn">支付宝账号</label>
+          <input type="radio" class="payMethBtn" name="payMethBtn" >
+          <span ></span>    
+      </div>
+      <div class="payMethodList">
+          <img class="payMethImg" src="images/yl.png">
+          <label for="payMethBtn">银行卡账号</label>
+          <input type="radio" class="payMethBtn" name="payMethBtn" >
+          <span ></span>    
+      </div>
+    </div>
+    <div class="payInput_box">
+      <img class="jbImg" src="images/jb.png">
+      <input class="jb_input" type="text" maxlength="11" />
+    </div>
+    <div>
+      <button class="register_action">支付</button>
+    </div>
+  </div>
+<script src="js/zepto.min.js"></script>
+<script src="dist/dropload.min.js"></script>
+<script>
+  $(function(){
+    $(".payMethBtn").click( function () {
+      $(this).siblings("span").addClass("active");
+      $(this).parents("div").siblings("div").children("span").removeClass("active");
+    });
+    $(".register_action").click( function () {
+     $('input:radio:checked').val();
+     console.log($('input:radio:checked').val())
+    });
+});
+</script>
+</body>
+</html>
